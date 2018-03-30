@@ -1,0 +1,9 @@
+db.songs.find({ $or: [ { "songname": "Welcome To The Jungle" }, { "songname": "Bark At The Moon" }, { "year": { $lte: 1980 } } ] }).pretty()
+
+db.songs.find({ $or: [ { "songname": "Welcome To The Jungle" }, { "year": { $gte: 1983 } } ] }).pretty()
+
+db.songs.find({ $or: [ { "songname": "Welcome To The Jungle" }, { "year": { $gte: 1983, $lte: 1987 } } ] }).pretty()
+
+db.songs.find({ $and: [ { "songname": "Welcome To The Jungle" }, { "year": { $gt: 1983 } } ] }).pretty()
+
+db.songs.find({ $and: [ { "year": { $ne: 1987 } }, { "year": { $gte: 1983 } } ] }).pretty()
